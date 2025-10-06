@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Adrien Rohayem</title>
+
+  <!-- React + ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Babel pour JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const profile = {
+      name: 'Adrien Rohayem',
+      role: 'Aspiring Sports Writer | Marketing & Communications',
+      location: 'Raleigh, NC, USA',
+      email: 'arohaye@ncsu.edu',
+      phone: '(984) 382-6423',
+      website: 'http://www.linkedin.com/in/adrienrohayem',
+      linkedin: 'http://www.linkedin.com/in/adrienrohayem',
+      github: '',
+      about: `Ambitious aspiring sports writer passionate about communication and storytelling, seeking to launch a career in media while developing the skills to advance into management within a major U.S. or international sports organization, contributing to operations, strategy, and long-term success.`,
+      skills: [
+        'Digital Marketing Strategy',
+        'Event Planning & Execution',
+        'Market Research & Competitive Analysis',
+        'Data Analysis & Reporting',
+        'Written Communication',
+        'Partnership Development',
+        'Public Relations',
+        'Cross-Cultural Communication & Intelligence',
+        'English (Bilingual)',
+        'French (Native)',
+        'Spanish (Professional)'
+      ],
+      experiences: [
+        {
+          company: 'Skema Business School',
+          period: 'Sep 2025 - Present',
+          title: 'Social Media Ambassador',
+          description: 'Content creation (graphics, photos, videos). Developed and implemented a digital marketing strategy to enhance online visibility.'
+        },
+        {
+          company: 'The Technician — North Carolina State University',
+          period: 'Jan 2024 - Present',
+          title: 'Correspondent Writer (Sports Rubric)',
+          description: 'Produced in-depth sports coverage for a weekly newspaper with 3,000+ copies in circulation. Researched, analyzed, and interpreted sports statistics to support data-driven reporting. Authored diverse content and conducted interviews with athletes, coaches, and team managers.'
+        },
+        {
+          company: 'Sports Connect Agency',
+          period: 'May - Jul 2025',
+          title: 'Marketing Intern',
+          description: 'Planned and executed sports events, overseeing logistics, partner outreach, and promotional campaigns. Developed and implemented a digital marketing strategy to enhance brand visibility. Managed partnership activations to maximize sponsor engagement and ROI.'
+        },
+        {
+          company: 'Feed The Pack — NC State University',
+          period: 'Jan 2024 - Present',
+          title: 'Volunteer',
+          description: 'Contributed to weekly food distribution to 400+ beneficiaries. Streamlined operations, ensuring efficient labeling, packaging, and shelving of food products. Promoted the program through outreach initiatives and donor engagement.'
+        }
+      ],
+      projects: [
+        { name: 'Skema Mentorship Program', desc: 'Certified mentorship program participant — SKEMA Business School.' },
+        { name: 'Intercultural Communication Certificate', desc: 'LinkedIn Learning certification on cross-cultural communication.' }
+      ]
+    };
+
+    function CVSite() {
+      return (
+        <div className="min-h-screen bg-gray-100 text-gray-900 antialiased">
+          <header className="max-w-4xl mx-auto p-6 flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900">{profile.name}</h1>
+              <p className="text-sm md:text-base text-gray-600">{profile.role} • {profile.location}</p>
+            </div>
+            <nav className="space-x-3 text-sm">
+              <a href="#about" className="hover:underline text-gray-700">About</a>
+              <a href="#experience" className="hover:underline text-gray-700">Experience</a>
+              <a href="#skills" className="hover:underline text-gray-700">Skills</a>
+              <a href="#projects" className="hover:underline text-gray-700">Certifications</a>
+              <a href="#contact" className="hover:underline text-gray-700">Contact</a>
+            </nav>
+          </header>
+
+          <main className="max-w-4xl mx-auto p-6 space-y-8">
+            {/* About / Hero */}
+            <section id="about" className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="flex-1">
+                <h2 className="text-xl md:text-2xl font-bold">{profile.role}</h2>
+                <p className="mt-3 text-gray-700 whitespace-pre-line">{profile.about}</p>
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a href={profile.website} target="_blank" rel="noreferrer" className="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700 transition">LinkedIn</a>
+                  {profile.github && (
+                    <a href={profile.github} target="_blank" rel="noreferrer" className="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700 transition">GitHub</a>
+                  )}
+                  <a href={`mailto:${profile.email}`} className="inline-block px-4 py-2 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700 transition">Contact</a>
+                </div>
+              </div>
+
+              <aside className="w-full md:w-48 bg-gray-50 text-gray-900 p-4 rounded-lg border border-gray-200 text-sm">
+                <p className="font-semibold">Contact</p>
+                <p className="text-gray-700 text-sm mt-1">{profile.email}</p>
+                <p className="text-gray-700 text-sm">{profile.phone}</p>
+                <div className="mt-3">
+                  <a href="#download" className="block text-xs underline text-gray-600">Download Resume (PDF)</a>
+                </div>
+              </aside>
+            </section>
+
+            {/* Experience */}
+            <section id="experience" className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-bold">Professional & Volunteering Experience</h3>
+              <div className="mt-4 space-y-4">
+                {profile.experiences.map((exp, idx) => (
+                  <article key={idx} className="flex flex-col md:flex-row md:justify-between">
+                    <div>
+                      <h4 className="font-semibold">{exp.title} — <span className="text-gray-600">{exp.company}</span></h4>
+                      <p className="text-sm text-gray-700">{exp.description}</p>
+                    </div>
+                    <div className="text-sm text-gray-600 mt-2 md:mt-0">{exp.period}</div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            {/* Skills */}
+            <section id="skills" className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-bold">Skills & Languages</h3>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {profile.skills.map((s, i) => (
+                  <span key={i} className="px-3 py-1 rounded-full border border-gray-300 text-sm bg-white shadow-sm">{s}</span>
+                ))}
+              </div>
+            </section>
+
+            {/* Projects / Certifications */}
+            <section id="projects" className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-bold">Certifications & Programs</h3>
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {profile.projects.map((p, i) => (
+                  <div key={i} className="p-4 border border-gray-200 rounded-lg bg-gray-50 shadow-sm">
+                    <h4 className="font-semibold">{p.name}</h4>
+                    <p className="text-sm text-gray-700 mt-2">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Contact */}
+            <section id="contact" className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-bold">Contact</h3>
+              <p className="text-gray-700 mt-2">You can reach out by email or through LinkedIn.</p>
+
+              <form className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3" onSubmit={(e)=>{e.preventDefault(); alert('This is a demo form — integrate with your preferred backend or service.');}}>
+                <input name="name" required placeholder="Your name" className="p-3 rounded-lg border border-gray-300" />
+                <input name="email" type="email" required placeholder="Your email" className="p-3 rounded-lg border border-gray-300" />
+                <input name="subject" placeholder="Subject" className="p-3 rounded-lg border border-gray-300 md:col-span-2" />
+                <textarea name="message" rows={4} placeholder="Message" className="p-3 rounded-lg border border-gray-300 md:col-span-2" />
+                <div className="md:col-span-2 flex items-center justify-between">
+                  <button className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">Send</button>
+                  <a href={`mailto:${profile.email}`} className="text-sm underline text-gray-700">Or send an email directly</a>
+                </div>
+              </form>
+            </section>
+
+            {/* Footer */}
+            <footer className="text-center text-sm text-gray-500 py-6">
+              <p>© {new Date().getFullYear()} {profile.name} — CV Website.</p>
+            </footer>
+          </main>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<CVSite />);
+  </script>
+</body>
+</html>
