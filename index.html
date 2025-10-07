@@ -112,7 +112,7 @@
                 <p className="text-gray-700 text-sm mt-1">{profile.email}</p>
                 <p className="text-gray-700 text-sm">{profile.phone}</p>
                 <div className="mt-3">
-                  <a href="#download" className="block text-xs underline text-gray-600">Download Resume (PDF)</a>
+                  <a href="Adrien_Rohayem_Resume.pdf" download className="block text-xs underline text-gray-600">Download Resume (PDF)</a>
                 </div>
               </aside>
             </section>
@@ -122,12 +122,16 @@
               <h3 className="text-lg font-bold">Professional & Volunteering Experience</h3>
               <div className="mt-4 space-y-4">
                 {profile.experiences.map((exp, idx) => (
-                  <article key={idx} className="flex flex-col md:flex-row md:justify-between">
-                    <div>
-                      <h4 className="font-semibold">{exp.title} — <span className="text-gray-600">{exp.company}</span></h4>
-                      <p className="text-sm text-gray-700">{exp.description}</p>
+                  <article key={idx} className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
+                    <div className="flex-1">
+                      <h4 className="font-semibold">
+                        {exp.title} — <span className="text-gray-600">{exp.company}</span>
+                      </h4>
+                      <p className="text-sm text-gray-700 mt-1">{exp.description}</p>
                     </div>
-                    <div className="text-sm text-gray-600 mt-2 md:mt-0">{exp.period}</div>
+                    <div className="text-sm text-gray-600 whitespace-nowrap md:text-right md:ml-4">
+                      {exp.period}
+                    </div>
                   </article>
                 ))}
               </div>
