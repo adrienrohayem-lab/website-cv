@@ -122,14 +122,14 @@
               <h3 className="text-lg font-bold">Professional & Volunteering Experience</h3>
               <div className="mt-4 space-y-4">
                 {profile.experiences.map((exp, idx) => (
-                  <article key={idx} className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
-                    <div className="flex-1">
+                  <article key={idx} className="grid grid-cols-[1fr_auto] gap-4 items-start">
+                    <div>
                       <h4 className="font-semibold">
                         {exp.title} — <span className="text-gray-600">{exp.company}</span>
                       </h4>
                       <p className="text-sm text-gray-700 mt-1">{exp.description}</p>
                     </div>
-                    <div className="text-sm text-gray-600 whitespace-nowrap md:text-right md:ml-4">
+                    <div className="text-sm text-gray-600 whitespace-nowrap text-right self-start">
                       {exp.period}
                     </div>
                   </article>
